@@ -1,0 +1,58 @@
+.volumeContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo base */
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80px;
+  height: 6px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(to right, #00eaff, #ff2ed1);
+  box-shadow: 0 0 6px rgba(0, 234, 255, 0.7), 0 0 10px rgba(255, 46, 209, 0.7);
+}
+
+/* Track para navegadores */
+.slider::-webkit-slider-runnable-track {
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #00eaff, #ff2ed1);
+}
+.slider::-moz-range-track {
+  height: 6px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #00eaff, #ff2ed1);
+}
+
+/* Thumb con glow */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #ff2ed1;
+  box-shadow: 0 0 6px #ff2ed1, 0 0 10px #00eaff;
+  cursor: pointer;
+  margin-top: -4px; /* centrar en el track */
+}
+.slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #ff2ed1;
+  box-shadow: 0 0 6px #ff2ed1, 0 0 10px #00eaff;
+  cursor: pointer;
+}

@@ -1,0 +1,19 @@
+.container {
+    width: 900px;
+    height: 632px;
+    border-radius: 20px;
+    background: var(--bg-music-player);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* ACOPLAMIENTO */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (max-width: 950px) {
+    .container {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+

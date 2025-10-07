@@ -1,0 +1,24 @@
+.controlsContainer {
+    width: 650px;
+    height: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.playlistControls {
+    width: 180px;
+}
+
+.volumeControl{
+    width: 120px;
+    margin-right: 20px;
+}
+
+.playerControls {
+    width: 200px;
+}

@@ -1,0 +1,29 @@
+:root {
+  --bg-page: linear-gradient(
+    135deg,
+    #3d008c 0%,
+    #6b1b9a 25%,
+    #8b4789 60%,
+    #c084b8 100%
+  );
+  --bg-music-player: linear-gradient(
+    135deg,
+    #e8d4f8 0%,
+    #f5e6ff 30%,
+    #e8d4f8 70%,
+    #b8e8f5 100%
+  );
+  --state-text: #B5B7CC;
+  --banner-text: #9B7BA8;
+}
+
+/* Optimizar animaciones */
+.button {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Reducir paint operations */
+* {
+  backface-visibility: hidden;
+}

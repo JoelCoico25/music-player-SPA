@@ -1,0 +1,57 @@
+.banner {
+  width: 900px;
+  height: 402px;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+}
+
+.imageContainer {
+  width: 400px;
+  height: 100%;
+  border-radius: 0 0 0 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.textContainer {
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--banner-text);
+  position: relative;
+}
+
+.textContainer h2 {
+  position: absolute;
+  top: 56px;
+}
+
+.songInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 80px;
+}
+
+.buttonsContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
