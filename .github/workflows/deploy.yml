@@ -24,6 +24,10 @@ jobs:
       
     - name: Build
       run: bun run build
+
+    # 👇 Paso agregado para ver la URL del remoto
+    - name: Show Git remote URL
+      run: git remote -v
       
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
