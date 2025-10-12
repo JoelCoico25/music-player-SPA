@@ -10,10 +10,10 @@
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/((?!music-player-SPA/).*)",
+      "destination": "/music-player-SPA/index.html"
     }
   ],
   "headers": [
