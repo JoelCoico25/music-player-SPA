@@ -21,5 +21,9 @@ export default defineConfig({
       '@context': path.resolve(__dirname, './src/context'),
       '@constants': path.resolve(__dirname, './src/constants'),
     },
+    "builds": [
+      { "src": "vite.config.js", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
+    ],
+    "routes": [{ "src": "/(.*)", "dest": "/" }]
   },
 })
