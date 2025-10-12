@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/music-player-SPA",
+  base: process.env.NODE_ENV === 'production' ? "/music-player-SPA/" : "/",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -18,6 +18,20 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
       '@styles': path.resolve(__dirname, './src/styles'),
       '@context': path.resolve(__dirname, './src/context'),
+      '@public': path.resolve(__dirname, './public'),
     },
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          icons: ['react-icons']
+        }
+      }
+    }
+  }
 })

@@ -14,7 +14,7 @@ const MusicPlayer = () => {
         song={currentTrack?.title || currentTrack?.name || ""}
         artist={currentTrack?.artist || ""}
         album={currentTrack?.album || ""}
-        coverUrl={currentTrack?.coverUrl}
+        coverUrl={currentTrack?.coverUrl || ""}
       />
       <ProgressBar 
         value={Math.floor(currentTime)}

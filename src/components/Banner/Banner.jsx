@@ -5,16 +5,46 @@ import { MdOutlinePlaylistAdd } from "react-icons/md";
 import { FaShareAlt } from "react-icons/fa";
 
 const Banner = ({ state = "none", song, artist, album, coverUrl }) => {
+  // Debug logging
+  console.log("Banner props:", { state, song, artist, album, coverUrl });
+  
+  // Determine the correct base path for images
+  const getImagePath = (path) => {
+    // In development, use the path as is
+    // In production, add the base path
+    if (import.meta.env.DEV) {
+      return path;
+    }
+    return `/music-player-SPA${path}`;
+  };
+  
   return (
     <section className={styles.banner}>
       <div className={styles.imageContainer}>
         <img
-          src={coverUrl || "/public/music-player-logo.png"}
-          alt={`${album} cover art`}
+          src={coverUrl || getImagePath("/music-player-logo.png")}
+          alt={`${album || "Unknown album"} cover art`}
           title="Album cover art"
           width={350}
-          style={{ borderRadius: "45px" }}
+          height={350}
+          style={{ 
+            borderRadius: "45px",
+            backgroundColor: "#f0f0f0",
+            border: "2px solid #ddd",
+            display: "block"
+          }}
           loading="lazy"
+          onLoad={(e) => {
+            console.log("Image loaded successfully:", e.target.src);
+          }}
+          onError={(e) => {
+            console.error("Image failed to load:", e.target.src);
+            const fallbackPath = getImagePath("/music-player-logo.png");
+            if (e.target.src !== fallbackPath) {
+              console.log("Trying fallback image");
+              e.target.src = fallbackPath;
+            }
+          }}
         />
       </div>
       <div className={styles.textContainer}>
