@@ -8,21 +8,11 @@ const Banner = ({ state = "none", song, artist, album, coverUrl }) => {
   // Debug logging
   console.log("Banner props:", { state, song, artist, album, coverUrl });
   
-  // Determine the correct base path for images
-  const getImagePath = (path) => {
-    // In development, use the path as is
-    // In production, add the base path
-    if (import.meta.env.DEV) {
-      return path;
-    }
-    return `/music-player-SPA${path}`;
-  };
-  
   return (
     <section className={styles.banner}>
       <div className={styles.imageContainer}>
         <img
-          src={coverUrl || getImagePath("/music-player-logo.png")}
+          src={coverUrl || "/music-player-logo.png"}
           alt={`${album || "Unknown album"} cover art`}
           title="Album cover art"
           width={350}
@@ -39,10 +29,9 @@ const Banner = ({ state = "none", song, artist, album, coverUrl }) => {
           }}
           onError={(e) => {
             console.error("Image failed to load:", e.target.src);
-            const fallbackPath = getImagePath("/music-player-logo.png");
-            if (e.target.src !== fallbackPath) {
+            if (e.target.src !== "/music-player-logo.png") {
               console.log("Trying fallback image");
-              e.target.src = fallbackPath;
+              e.target.src = "/music-player-logo.png";
             }
           }}
         />

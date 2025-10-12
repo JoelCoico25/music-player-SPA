@@ -12,8 +12,8 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!music-player-SPA/).*)",
-      "destination": "/music-player-SPA/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
