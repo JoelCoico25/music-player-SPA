@@ -28,7 +28,8 @@ jobs:
       - name: Build
         run: bun run build
 
-      # 👇 Muestra la URL remota usada por Git
+      # 👇 Muestra la URL remota usada por Git y para pruebas
+      
       - name: Show Git remote URL
         run: git remote -v
 
