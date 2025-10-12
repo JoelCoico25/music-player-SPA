@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/((?!assets/|music-player-logo.png|_headers).*)",
-      "destination": "/index.html"
-    }
-  ]
-}

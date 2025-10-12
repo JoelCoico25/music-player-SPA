@@ -131,31 +131,36 @@ src/
 
 ## 🚀 Despliegue
 
-### Vercel (Recomendado)
+### GitHub Pages (Recomendado)
 
-1. **Conecta tu repositorio** con Vercel
-2. **Configuración automática**:
-   - Framework: `Vite`
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-3. **Despliega** con un clic
+1. **Habilita GitHub Pages** en tu repositorio:
+   - Ve a `Settings` > `Pages`
+   - Selecciona `GitHub Actions` como fuente
+2. **El workflow automático** se ejecutará en cada push a `main`
+3. **Tu aplicación estará disponible** en:
+   ```
+   https://joelcoico25.github.io/music-player-SPA/
+   ```
 
 ### Despliegue manual
 
 ```bash
 # Build para producción
-npm run build
+bun run build
 
 # Vista previa local
-npm run preview
+bun run preview
 
-# Despliegue con Vercel CLI
-npx vercel
+# Los archivos se generan en la carpeta dist/
 ```
 
-### Variables de entorno
+### Configuración automática
 
-No se requieren variables de entorno para el funcionamiento básico.
+El proyecto incluye un workflow de GitHub Actions (`.github/workflows/deploy.yml`) que:
+- ✅ **Detecta cambios** en la rama `main`
+- ✅ **Instala dependencias** con Bun
+- ✅ **Construye el proyecto** automáticamente
+- ✅ **Despliega** en GitHub Pages
 
 ## 🔧 Scripts disponibles
 
