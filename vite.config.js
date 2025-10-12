@@ -8,6 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  base: "./",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -21,9 +22,5 @@ export default defineConfig({
       '@context': path.resolve(__dirname, './src/context'),
       '@constants': path.resolve(__dirname, './src/constants'),
     },
-    "builds": [
-      { "src": "vite.config.js", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
-    ],
-    "routes": [{ "src": "/(.*)", "dest": "/" }]
   },
 })
