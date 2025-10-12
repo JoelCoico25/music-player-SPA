@@ -16,7 +16,7 @@ const MusicPlayer = () => {
         album={currentTrack?.album || ""}
         coverUrl={currentTrack?.coverUrl || ""}
       />
-      {console.log(currentTrack)}
+      {console.log(currentTrack.coverUrl)}
       <ProgressBar 
         value={Math.floor(currentTime)}
         maxValue={Math.max(0, Math.floor(duration || 0))}
