@@ -31,6 +31,7 @@ Un reproductor de música moderno y elegante construido con React 19 y Vite. Per
 - **jsmediatags** - Procesamiento adicional de etiquetas de audio
 
 ### Herramientas de Desarrollo
+- **Bun** - Runtime y package manager ultrarrápido
 - **ESLint** - Linting de código
 - **SWC** - Compilador ultrarrápido
 - **TypeScript** - Tipado estático (opcional)
@@ -38,24 +39,32 @@ Un reproductor de música moderno y elegante construido con React 19 y Vite. Per
 ## 🚀 Instalación
 
 ### Prerrequisitos
-- Node.js 18+ 
-- npm o yarn
+- **Bun** (recomendado) o Node.js 18+
+- npm, yarn o bun
 
 ### Pasos de instalación
 
 1. **Clona el repositorio**
 ```bash
-git clone https://github.com/tu-usuario/music-player-SPA.git
+git clone https://github.com/JoelCoico25/music-player-SPA.git
 cd music-player-SPA
 ```
 
 2. **Instala las dependencias**
 ```bash
+# Con Bun (recomendado)
+bun install
+
+# O con npm
 npm install
 ```
 
 3. **Ejecuta en modo desarrollo**
 ```bash
+# Con Bun
+bun run dev
+
+# O con npm
 npm run dev
 ```
 
@@ -151,6 +160,14 @@ No se requieren variables de entorno para el funcionamiento básico.
 ## 🔧 Scripts disponibles
 
 ```bash
+# Con Bun (recomendado)
+bun run dev          # Servidor de desarrollo
+bun run build        # Build para producción
+bun run preview      # Vista previa del build
+bun run lint         # Linting del código
+bun run vercel-build # Build específico para Vercel
+
+# O con npm
 npm run dev          # Servidor de desarrollo
 npm run build        # Build para producción
 npm run preview      # Vista previa del build

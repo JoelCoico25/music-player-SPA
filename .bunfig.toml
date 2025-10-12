@@ -1,0 +1,12 @@
+[install]
+# Configuración de Bun para el proyecto
+cache = true
+exact = false
+production = false
+
+[install.scopes]
+# Scopes para paquetes privados si los hay
+
+[run]
+# Configuración para scripts de Bun
+bun = "bun"
