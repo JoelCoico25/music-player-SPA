@@ -1,6 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,7 +18,7 @@ export default defineConfig({
       '@services': path.resolve(__dirname, './src/services'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@styles': path.resolve(__dirname, './src/styles'),
-      '@contexts': path.resolve(__dirname, './src/contexts'),
+      '@context': path.resolve(__dirname, './src/context'),
       '@constants': path.resolve(__dirname, './src/constants'),
     },
   },

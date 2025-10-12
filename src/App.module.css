@@ -1,6 +1,7 @@
 .container {
-    width: 900px;
-    height: 632px;
+    width: 100%;
+    max-width: 900px;
+    min-height: 632px;
     border-radius: 20px;
     background: var(--bg-music-player);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -8,12 +9,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 16px auto;
 }
-@media (max-width: 950px) {
-    .container {
-        width: 100%;
-        height: 100%;
-        border-radius: 0;
-    }
+
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+    margin: 12px auto;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 8px auto;
+    border-radius: 14px;
+  }
 }
 

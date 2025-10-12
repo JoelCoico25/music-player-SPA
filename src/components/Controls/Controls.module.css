@@ -1,6 +1,7 @@
 .controlsContainer {
-    width: 650px;
-    height: 22px;
+    width: 100%;
+    max-width: 650px;
+    height: 48px; /* increased to fit 40px buttons */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -8,10 +9,39 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    position: relative;
+    z-index: 3; /* above dropzone */
+}
+
+/* Tablet layout */
+@media (max-width: 768px) {
+    .controlsContainer {
+        width: 100%;
+        max-width: 100%;
+        padding: 8px;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .playlistControls {
+        width: auto;
+        gap: 6px;
+    }
+
+    .playerControls {
+        width: auto;
+    }
+
+    .volumeControl{
+        width: 140px;
+        margin-right: 0;
+    }
 }
 
 .playlistControls {
     width: 180px;
+    display: flex;
+    gap: 8px;
 }
 
 .volumeControl{
@@ -21,4 +51,68 @@
 
 .playerControls {
     width: 200px;
+}
+
+/* New: generic icon button styling */
+.iconButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: transparent;
+    color: gray;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 120ms ease, color 120ms ease, background-color 120ms ease;
+}
+
+.iconButton:hover {
+    color: #00eaff;
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.iconButton:active {
+    transform: scale(0.96);
+}
+
+.iconButton:focus-visible {
+    outline: 2px solid #00eaff;
+    outline-offset: 2px;
+}
+
+/* Active toggle state */
+.active {
+    color: #ff2ed1;
+}
+
+.playbackControls {
+    display: flex;
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+    .controlsContainer {
+        max-width: 100%;
+        height: auto;
+        padding: 8px 4px 0 4px;
+        gap: 8px;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+
+    .playlistControls {
+        width: auto;
+        gap: 4px;
+    }
+
+    .playerControls {
+        width: auto;
+    }
+
+    .volumeControl{
+        width: 100px;
+        margin-right: 0;
+    }
 }

@@ -1,5 +1,6 @@
 .progressContainer {
-  width: 784px;
+  width: 100%;
+  max-width: 784px;
   height: 72px;
   align-self: center;
   display: flex;
@@ -7,12 +8,31 @@
   justify-content: center;
   gap: 4px;
   position: relative; /* necesario para ubicar el tooltip */
+  z-index: 3; /* asegurar interacción por encima del dropzone */
+}
+
+@media (max-width: 768px) {
+  .progressContainer {
+    width: 100%;
+    padding: 0 8px;
+  }
+  .progressBar {
+    height: 16px;
+  }
+  .timeIndicator {
+    top: 32px;
+    font-size: 13px;
+  }
+  .timeStamps {
+    font-size: 13px;
+  }
 }
 
 .progressBar {
   width: inherit;
   height: 20px;
   -webkit-appearance: none;
+  appearance: none;
   border-radius: 10px;
   background: linear-gradient(to right, #7d4dff, #ffffff);
   outline: none;
@@ -81,4 +101,27 @@
   margin-top: 8px;
   font-size: 14px;
   color: #6c6c6c;
+}
+
+/* Mobile layout */
+@media (max-width: 480px) {
+  .progressContainer {
+    width: 100%;
+    height: 64px;
+    padding: 0 4px;
+  }
+
+  .progressBar {
+    width: 100%;
+    height: 14px;
+  }
+
+  .timeIndicator {
+    top: 28px;
+    font-size: 12px;
+  }
+
+  .timeStamps {
+    font-size: 12px;
+  }
 }

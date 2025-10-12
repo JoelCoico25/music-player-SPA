@@ -1,15 +1,17 @@
-
-import styles from "./App.module.css";
+import styles from "@/App.module.css";
 import { lazy, Suspense } from "react";
+import { PlaylistProvider } from "@context/PlaylistContext.jsx";
 
 function App() {
-  const MusicPlayer = lazy(() => import("../src/components/MusicPlayer/MusicPlayer.jsx"));
+  const MusicPlayer = lazy(() => import("@components/MusicPlayer/MusicPlayer.jsx"));
   return (
     <>
       <section className={styles.container}>
-        <Suspense fallback={<div>Cargando...</div>}>
-          <MusicPlayer />
-        </Suspense>
+        <PlaylistProvider>
+          <Suspense fallback={<div>Cargando...</div>}>
+            <MusicPlayer />
+          </Suspense>
+        </PlaylistProvider>
       </section>
     </>
   );

@@ -1,17 +1,15 @@
-import styles from "./Banner.module.css";
-import Button from "../shared/Button/Button";
+import styles from "@components/Banner/Banner.module.css";
+import Button from "@components/shared/Button/Button";
 import { FaHeart } from "react-icons/fa";
 import { MdOutlinePlaylistAdd } from "react-icons/md";
 import { FaShareAlt } from "react-icons/fa";
 
-const Banner = ({ state= "none", song, artist, album, src }) => {
+const Banner = ({ state = "none", song, artist, album, coverUrl }) => {
   return (
     <section className={styles.banner}>
       <div className={styles.imageContainer}>
         <img
-          src={
-            "https://i.scdn.co/image/ab67616d0000b2736c1180ae683cc09d840a9163"
-          }
+          src={coverUrl || "/public/music-player-logo.png"}
           alt={`${album} cover art`}
           title="Album cover art"
           width={350}
@@ -26,7 +24,7 @@ const Banner = ({ state= "none", song, artist, album, src }) => {
         <div className={styles.songInfo}>
           <h3 style={{ fontSize: "30px" }}>{song}</h3>
           <h3 style={{ opacity: 0.35, fontSize: "24px" }}>{artist}</h3>
-          <h3 style={{fontSize: "22px"}}>{album}</h3>
+          <h3 style={{ fontSize: "22px" }}>{album}</h3>
         </div>
       </div>
       <div className={styles.buttonsContainer}>

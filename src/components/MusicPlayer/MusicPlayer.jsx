@@ -1,24 +1,28 @@
-import Banner from "../Banner/Banner";
-import Controls from "../Controls/Controls";
-import ProgressBar from "../ProgressBar/ProgressBar";
-import BannerFile from "../BannerFile/BannerFile";
+import Banner from "@components/Banner/Banner";
+import Controls from "@components/Controls/Controls";
+import ProgressBar from "@components/ProgressBar/ProgressBar";
+import BannerFile from "@components/BannerFile/BannerFile";
+import { usePlaylistContext } from "@context/usePlaylistContext";
 
 const MusicPlayer = () => {
-  const handleFolderSelect = (files) => {
-    console.log("Archivos de audio seleccionados:", files);
-    // Procesa los archivos aquí
-  };
+  const { isPlaying, currentTrack, currentTime, duration, seekTo } = usePlaylistContext();
 
   return (
     <>
       <Banner
-        song={"Purple haze"}
-        artist={"Jimi Hendrix"}
-        album={"WoodStock"}
+        state={isPlaying ? "playing" : currentTrack ? "paused" : "none"}
+        song={currentTrack?.title || currentTrack?.name || ""}
+        artist={currentTrack?.artist || ""}
+        album={currentTrack?.album || ""}
+        coverUrl={currentTrack?.coverUrl}
       />
-      <ProgressBar />
+      <ProgressBar 
+        value={Math.floor(currentTime)}
+        maxValue={Math.max(0, Math.floor(duration || 0))}
+        onChange={(val) => seekTo(val)}
+      />
       <Controls />
-      <BannerFile onFolderSelect={handleFolderSelect} />
+      <BannerFile />
     </>
   );
 };

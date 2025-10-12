@@ -1,36 +1,31 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback} from "react";
 import { MdCloudUpload } from "react-icons/md";
-import styles from "./BannerFile.module.css";
-import { usePlaylist } from "../../hooks/usePlaylist";
+import styles from "@components/BannerFile/BannerFile.module.css";
+import { usePlaylistContext } from "@context/usePlaylistContext";
 
 const BannerFile = () => {
   const [isDragging, setIsDragging] = useState(false);
-  const {isLoading} = usePlaylist();
+  const { isLoading, importFiles } = usePlaylistContext();
 
 
   const handleDrop = useCallback(
-    (e) => {
+    async (e) => {
       e.preventDefault();
       e.stopPropagation();
       setIsDragging(false);
 
-      const files = Array.from(e.dataTransfer.files).filter((file) =>
-        file.type.startsWith("audio/")
-      );
-
-      if (files.length > 0) {
-        console.log(isLoading)
+      const files = e.dataTransfer.files;
+      if (files && files.length > 0) {
+        await importFiles(files);
       }
     },
-    []
+    [importFiles]
   );
 
-  const handleFileInput = (e) => {
-    const files = Array.from(e.target.files).filter((file) =>
-      file.type.startsWith("audio/")
-    );
-    if (files.length > 0) {
-      processFiles(files);
+  const handleFileInput = async (e) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      await importFiles(files);
     }
   };
 
@@ -65,7 +60,7 @@ const BannerFile = () => {
         )}
       </div>
     </div>
-  );s
+  );
 
 };
 
