@@ -33,10 +33,10 @@ const Controls = () => {
   return (
     <section className={styles.controlsContainer}>
       <div className={styles.playlistControls}>
-        <button type="button" onClick={toggleShuffle} aria-pressed={isShuffle} aria-label="Alternar reproducción aleatoria">
+        <button type="button" style={{background: 'transparent', border: 'none', cursor: 'pointer'}} onClick={toggleShuffle} aria-pressed={isShuffle} aria-label="Alternar reproducción aleatoria">
           <FaRandom size={46} color={isShuffle ? '#ff2ed1' : 'gray'} />
         </button>
-        <button type="button" onClick={toggleRepeatOne} aria-pressed={repeatOne} aria-label="Alternar repetir una vez">
+        <button type="button" style={{background: 'transparent', border: 'none', cursor: 'pointer'}} onClick={toggleRepeatOne} aria-pressed={repeatOne} aria-label="Alternar repetir una vez">
           <PiRepeatOnceDuotone size={46} color={repeatOne ? '#ff2ed1' : 'gray'} />
         </button>
       </div>
@@ -49,7 +49,7 @@ const Controls = () => {
           />
       </section>
       <div className={styles.playbackControls}>
-        <button type="button" onClick={handleRestart} aria-label="Reiniciar pista">
+        <button type="button" style={{background: 'transparent', border: 'none', cursor: 'pointer'}} onClick={handleRestart} aria-label="Reiniciar pista">
           <BsArrowRepeat size={46} color={restartActive ? '#ff2ed1' : 'gray'} />
         </button>
       </div>

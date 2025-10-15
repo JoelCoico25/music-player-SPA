@@ -1,24 +1,15 @@
 /* Base button styles */
-.button,
-button {
+.button {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s ease;
-  color: white;
+  background-color: transparent;
 }
 
-.button {
-  background-color: var(--primary-color);
-}
-
-button {
-  background-color: inherit;
-}
-
-button:hover {
+.button:hover {
   opacity: 0.8;
 }
 
