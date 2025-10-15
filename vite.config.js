@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/music-player-SPA/",
+  base: "/",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -25,11 +25,14 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
-          icons: ['react-icons']
+          icons: ['react-icons'],
+          'music-metadata': ['music-metadata-browser', 'jsmediatags'],
+          utils: ['uuid']
         }
       }
     }

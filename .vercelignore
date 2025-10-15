@@ -7,7 +7,15 @@ node_modules
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+bun-debug.log*
 .DS_Store
 .vscode
 .idea
 *.log
+.bunfig.toml
+README.md
+.github
+eslint.config.js
+jsconfig.json
+package-lock.json
+bun.lock

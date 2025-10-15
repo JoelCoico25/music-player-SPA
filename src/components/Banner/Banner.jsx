@@ -12,7 +12,7 @@ const Banner = ({ state = "none", song, artist, album, coverUrl }) => {
     <section className={styles.banner}>
       <div className={styles.imageContainer}>
         <img
-          src={coverUrl || "/music-player-SPA/music-player-logo.png"}
+          src={coverUrl || "/music-player-logo.png"}
           alt={`${album || "Unknown album"} cover art`}
           title="Album cover art"
           width={350}
@@ -29,9 +29,9 @@ const Banner = ({ state = "none", song, artist, album, coverUrl }) => {
           }}
           onError={(e) => {
             console.error("Image failed to load:", e.target.src);
-            if (e.target.src !== "/music-player-SPA/music-player-logo.png") {
+            if (e.target.src !== "/music-player-logo.png") {
               console.log("Trying fallback image");
-              e.target.src = "/music-player-SPA/music-player-logo.png";
+              e.target.src = "/music-player-logo.png";
             }
           }}
         />
