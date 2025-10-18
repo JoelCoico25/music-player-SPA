@@ -4,7 +4,9 @@ import { PlaylistProvider } from "@context/PlaylistContext.jsx";
 import Footer from "@components/Footer/Footer.jsx";
 
 function App() {
-  const MusicPlayer = lazy(() => import("@components/MusicPlayer/MusicPlayer.jsx"));
+  const MusicPlayer = lazy(() =>
+    import("@components/MusicPlayer/MusicPlayer.jsx")
+  );
   return (
     <>
       <section className={styles.container}>
@@ -14,7 +16,7 @@ function App() {
           </Suspense>
         </PlaylistProvider>
       </section>
-      <Footer />
+      <Footer url="https://github.com/JoelCoico25" text="GitHub" />
     </>
   );
 }
